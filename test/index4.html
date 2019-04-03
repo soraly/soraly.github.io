@@ -20,8 +20,8 @@
     <!--<meta property="og:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
     <!--<meta name="twitter:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
 
-   
-    <!-- <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
+    <!-- <meta property="og:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg">
+    <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
 </head>
 <body>
 onload测试
@@ -29,7 +29,12 @@ onload测试
     function addmeta(name,url){
     // 插入 meta 标签
         var oMeta = document.createElement('meta');
-        oMeta.name = name;
+        if(name=='og:image'){
+            oMeta.setAttribute('property',name);
+        }else {
+            oMeta.name = name;
+        }
+    
         oMeta.content = url;
         document.getElementsByTagName('head')[0].appendChild(oMeta);
     }
