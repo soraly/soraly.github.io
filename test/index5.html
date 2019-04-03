@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
 </head>
 <body>
-onload测试
+test again
 <script>
     function addmeta(name,url){
     // 插入 meta 标签
@@ -37,11 +37,10 @@ onload测试
         oMeta.content = url;
         document.getElementsByTagName('head')[0].appendChild(oMeta);
     }
-    window.onload = function(){
-        console.log('start');
+    setTimeout(function(){
         addmeta('og:image','https://m.igrow.cn/assets/img/school/news/p1.jpg')
         addmeta('twitter:image','https://m.igrow.cn/assets/img/school/news/p1.jpg')
-    }
+    },200)
 </script>
 </body>
 </html>
