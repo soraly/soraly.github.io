@@ -14,8 +14,8 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="刘志翔演示">
     <meta name="twitter:site" content="刘志翔演示">
-    <meta property="og:title" content="测试点额标题">
-    <meta name="twitter:title" content="测试点额标题">
+    <meta property="og:title" content="hello">
+    <meta name="twitter:title" content="hello">
 
     <!--<meta property="og:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
     <!--<meta name="twitter:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
 </head>
 <body>
-onload测试
+onload测试 0404
 <script>
     function addmeta(name,url){
     // 插入 meta 标签
@@ -39,9 +39,11 @@ onload测试
         document.getElementsByTagName('head')[0].appendChild(oMeta);
     }
     window.onload = function(){
+        var url = decodeURIComponent(location.search.split('?')[1].split('&')[0].split('=')[1]);
+        
         console.log('start');
-        addmeta('og:image','https://m.igrow.cn/assets/img/school/news/p1.jpg')
-        addmeta('twitter:image','https://m.igrow.cn/assets/img/school/news/p1.jpg')
+        addmeta('og:image',url);
+        addmeta('twitter:image','https://m.igrow.cn/assets/img/school/news/p5.jpg')
     }
 </script>
 </body>
