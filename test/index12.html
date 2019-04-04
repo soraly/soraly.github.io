@@ -1,0 +1,59 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <title>测试点额标题</title>
+    
+    <meta name="twitter:card" content="summary">
+    
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="刘志翔演示">
+    <meta name="twitter:site" content="刘志翔演示">
+    <meta property="og:title" content="测试点额标题">
+    <meta name="twitter:title" content="测试点额标题">
+    
+
+    <!--<meta property="og:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
+    <!--<meta name="twitter:url" content="http://weixin.91sst.com/Html/School/SchoolDetail.htm?Id=11483">-->
+
+    <!-- <meta property="og:image" content="https://m.igrow.cn/geturl?id=952641">
+    <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
+</head>
+<body>
+
+<script>
+    function addmeta(name,url){
+        // 插入 meta 标签
+        var oMeta = document.createElement('meta');
+        if(name=='og:image'){
+            oMeta.setAttribute('property',name);
+        }else {
+            oMeta.name = name;
+        }
+        oMeta.content = url;
+        document.getElementsByTagName('head')[0].appendChild(oMeta);
+    }
+    function addtitle(title){
+        // 插入 meta 标签
+        var oMeta = document.createElement('meta');
+        oMeta.name = 'description';
+        oMeta.content = title;
+        document.getElementsByTagName('head')[0].appendChild(oMeta);
+    }    
+
+    window.onload = function(){   
+        var url = decodeURIComponent(location.search.split('?')[1].split('&')[0].split('=')[1]);
+        var title = decodeURIComponent(location.search.split('?')[1].split('&')[1].split('=')[1]);
+        console.log(url,title);
+        addmeta('og:image', url);
+        addmeta('twitter:image', url);
+        addtitle(title);
+    }
+</script>
+</body>
+</html>
+
