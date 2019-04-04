@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="https://m.igrow.cn/assets/img/school/news/p1.jpg"> -->
 </head>
 <body>
-onload测试 0404
+onload测试 40
 <script>
     function addmeta(name,url){
     // 插入 meta 标签
@@ -39,10 +39,8 @@ onload测试 0404
         document.getElementsByTagName('head')[0].appendChild(oMeta);
     }
     window.onload = function(){
-        var url = decodeURIComponent(location.search.split('?')[1].split('&')[0].split('=')[1]);
-        
-        addmeta('og:image',url);
-        addmeta('twitter:image',url);
+        addmeta('og:image','https://m.igrow.cn/assets/img/school/news/p5.jpg');
+        addmeta('twitter:image','https://m.igrow.cn/assets/img/school/news/p5.jpg');
     }
 </script>
 </body>
